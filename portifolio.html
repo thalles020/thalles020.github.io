@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <title>Portifólio</title>
+
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="estilo.css">
+	  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Allerta+Stencil|Patua+One" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css" integrity="sha384-/rXc/GQVaYpyDdyxK+ecHPVYJSN9bmVFBvjA/9eOB+pb3F2w2N6fc5qB9Ew5yIns" crossorigin="anonymous">
+</head>
+
+<body>
+<!-- div1 CAIXA TODA -->
+<header class="headerFixo">
+
+  <div class="menu-bar">
+    <a class="menu-ico" href="#" onclick=" return alternarMenu();"><i class="fas fa-bars"></i></a>
+  </div>
+
+  <div class="menu" id="menu"> <!-- links -->
+    <a class="menu-item" data-ancora="a-sobre" href='#'>Sobre mim</a>
+    <a class="menu-item" data-ancora="a-experiencia" href='#'>Experiência</a>
+  </div>
+</header>
+<div class="close-menu" id="close-menu"></div>
+
+  <div class="image-logo">
+    <IMG SRC="port.png" WIDTH=180>
+  </div>
+
+  <div class="wallpaper">
+    <IMG class="fundo" SRC="wallpaper.jpg" WIDTH=1349>
+  </div>
+
+  <div class="image-foto">
+    <IMG class="image-item2" SRC="foto.jpg" WIDTH=180>
+      <div class="text-name">
+        <h1 class="nome-foto">Mário Dourado</h1>
+      </div>
+  </div>
+
+<div class="boxIcone"><!--	<IMG class="imagem1" SRC="prog.jpg" WIDTH=300> -->
+    <div class="iconeRedeSocial"> <!--Redes Sociais (pegar os ícones neste site https://fontawesome.com/ )-->
+      <a class="icon" target="_blank" href='https://www.linkedin.com/in/m%C3%A1rio-dourado-635a52159/'><i class="fab fa-linkedin icone1"></i></a>
+      <a class="icon" target="_blank" href="https://www.instagram.com/mariio_dourado/?hl=pt-br"><i <i <i class="fab fa-instagram icone2"></i></a>
+      <a class="icon" target="_blank" href="mailto:mariodourado04@hotmail.com"><i <i class="far fa-envelope icone3"></i></a>
+    </div>
+</div>
+
+
+<main>
+
+<a class="ancora" id="a-sobre">.</a>
+<section class="section1">
+  <div class="sobreMim">
+    <h1 class="sobre-titulo">Olá, bem vindo! Eu sou Mário Dourado Dos Santos. Tenho 20 anos e atualmente sou estudante de Programação Web. Estou sempre à procura de obter novos conhecimentos. Pretendo engressar em uma faculdade, na área de Ciência da Computação, e me especializar em Segurança da Informação. Bom, este portfólio mostrará tudo o que já realizei até aqui.</h1>
+  </div>
+
+  <div class="cursos">
+    <IMG class="imageCapelo" SRC="capelo.png" WIDTH=150>
+    <p class="titulo-cursos">Cursos e Formações</p>
+    <ul>
+        <li>Cursando Programação Web - Senac</li>
+        <li>Ensino Médio completo - E.E. Irmã Gabriela Maria Elizabeth Wienkem;</li>
+        <li>Curso de Formação de monitores - USP – concluído em Abril 2015</li>
+        <li>Curso de Rotinas Administrativas - concluído em Agosto de 2014; </li>
+        <li>Curso de Francês – CEL (Centro de Línguas de Osasco) - concluído em Dezembro 2014;</li>
+        <li>Curso básico de Informática (Windows, Word, Excel e Power Point) - concluído em Agosto de 2014.</li>
+    </ul>
+  </div>
+</section>
+
+
+  <a class="ancora" id="a-experiencia">.</a>
+  <section class="section2">
+    <div class="experiencia">
+      <IMG class="imageCetelem" SRC="cetelem.png" WIDTH=200>
+      <h1 class="titulo">Histórico Profissional</h1>
+        <p class="sub-titulo">Banco Cetelem S/A - Abr/2017 a Jul/2018</p>
+          <p class="cargo">Jovem aprendiz área Jurídica</p>
+      <ul>
+          <li>Responsável pelo controle e saída de Processos Cíveis e Procon, exercendo o précadastro destes no sistema DJUR; </li>
+          <li>Elaboração de planilhas no Excel para o controle de todas as ações;</li>
+          <li>Digitalização e envio de resposta de Ofícios aos escritórios do Banco, Delegacias de Polícia Civil e Defensorias Públicas.</li>
+          <li>Realização de bloqueios de contas no sistema BacenJud, Siclid e Autorizador.</li>
+          <li>Resultado: Exercendo um ótimo desempenho, houve um melhoramento no fluxo de entrada e saída de todos os documentos, deixando assim sempre todos em dia, tratando de todos os casos, incluindo os mais urgentes, de forma eficaz e definitiva.</li>
+        </ul>
+    </div>
+  </section>
+
+  <div class="footer">
+     <p class="finalRodape">Todos os direitos reservados.</p>
+  </div>
+
+
+</main>
+
+
+
+
+<script>
+document.querySelectorAll('[data-ancora]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        document.getElementById(this.getAttribute('data-ancora')).scrollIntoView({
+            behavior: 'smooth', block: 'start', inline: 'nearest'
+        });
+    });
+});
+
+
+menuAberto = false;
+function alternarMenu(){
+  var links = document.getElementById('menu');
+  //var closeMenu = document.getElementById('close-menu');
+  if(menuAberto){
+    links.classList.remove("menu-aberto");
+    //closeMenu.style.display = "block";
+  }else{
+    links.classList.add("menu-aberto");
+    //closeMenu.style.display = "block";
+  }
+  menuAberto = !menuAberto;
+  return false;
+}
+function fecharMenu(){
+  var links = document.getElementById('menu');
+  links.classList.remove("menu-aberto");
+  menuAberto = false;
+  var closeMenu = document.getElementById('close-menu');
+  closeMenu.style.display = "none";
+}
+var closeMenu = document.getElementById('close-menu');
+closeMenu.addEventListener('click', function(e) {
+  fecharMenu();
+}, false);
+
+
+
+</script>
+
+
+</body>
+</html>
